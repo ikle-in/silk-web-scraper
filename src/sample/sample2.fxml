@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <children>
+        <VBox fx:id="bgPane" alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #0e1111;">
+            <children>
+                <Button fx:id="homeButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #414a4c;" text="Home" textFill="WHITE">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                    </cursor>
+                    <effect>
+                        <Glow />
+                    </effect></Button>
+                <Button fx:id="linksButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#changeToLinks" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #3b444b;" text="Links" textFill="WHITE">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                    <effect>
+                        <Glow />
+                    </effect></Button>
+                <Button fx:id="wordsButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#changeToWords" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #353839;" text="HTML" textFill="WHITE">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                    <effect>
+                        <Glow />
+                    </effect></Button>
+                <Button fx:id="prefButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#changeToPref" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #232b2b;" text="Preferences" textFill="WHITE">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                    <effect>
+                        <Glow />
+                    </effect></Button>
+            </children>
+        </VBox>
+        <BorderPane fx:id="divider" prefHeight="400.0" prefWidth="5.0" style="-fx-background-color: #414a4c;" />
+        <VBox alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="600.0" prefWidth="795.0" style="-fx-background-color: #353839;" HBox.hgrow="ALWAYS">
+            <children>
+                <MenuBar maxWidth="1.7976931348623157E308" style="-fx-background-color: #414a4c;">
+                    <menus>
+                        <Menu mnemonicParsing="false" text="File">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="Close" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Edit">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="Delete" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Help">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="About" />
+                            </items>
+                        </Menu>
+                    </menus>
+                </MenuBar>
+                <Label alignment="CENTER" prefHeight="60.0" prefWidth="300.0" text="Silk Web Scraper" textAlignment="CENTER" textFill="#bababa">
+                    <font>
+                        <Font size="36.0" />
+                    </font>
+                </Label>
+                <Separator prefHeight="5.0" prefWidth="795.0" />
+                <Label alignment="CENTER" contentDisplay="CENTER" text="Enter URL:" textAlignment="CENTER" textFill="#bababa">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Label>
+                <HBox alignment="CENTER" prefHeight="30.0" prefWidth="200.0">
+                    <children>
+                        <TextField fx:id="urlEntry" prefHeight="30.0" prefWidth="400.0" style="-fx-background-color: #bababa;" />
+                        <Button fx:id="enterButton" mnemonicParsing="false" onAction="#getText" prefHeight="30.0" style="-fx-background-color: BLACK;" text="Enter" textFill="#bababa">
+                            <HBox.margin>
+                                <Insets left="5.0" />
+                            </HBox.margin>
+                        </Button>
+                    </children>
+                </HBox>
+                <Label fx:id="confirmationText" alignment="CENTER" prefHeight="65.0" prefWidth="795.0" textFill="WHITE">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Label>
+                <VBox prefHeight="50.0" prefWidth="100.0">
+                    <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="76.0" prefWidth="795.0">
+                            <children>
+                                <Button mnemonicParsing="false" onAction="#refreshHome" style="-fx-border-color: #bababa; -fx-background-color: BLACK;" text="REFRESH" textFill="#bababa">
+                                    <HBox.margin>
+                                        <Insets left="5.0" />
+                                    </HBox.margin>
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </Button>
+                                <Button alignment="CENTER" mnemonicParsing="false" onAction="#openInBrowser" style="-fx-background-color: BLACK;" text="Open in Browser" textFill="#bababa">
+                                    <opaqueInsets>
+                                        <Insets />
+                                    </opaqueInsets>
+                                    <HBox.margin>
+                                        <Insets left="5.0" />
+                                    </HBox.margin>
+                                </Button>
+                                <Button mnemonicParsing="false" onAction="#openFullReportSaveDialog" style="-fx-background-color: BLACK;" text="Generate Full Report" textFill="#bababa">
+                                    <HBox.margin>
+                                        <Insets left="5.0" />
+                                    </HBox.margin>
+                                </Button>
+                                <Button mnemonicParsing="false" onAction="#openSaveDialog" style="-fx-background-color: BLACK;" text="Export Links" textFill="#bababa">
+                                    <HBox.margin>
+                                        <Insets left="5.0" />
+                                    </HBox.margin>
+                                </Button>
+                                <Button mnemonicParsing="false" onAction="#openHTMLSaveDialog" style="-fx-background-color: BLACK;" text="Export HTML" textFill="#bababa">
+                                    <HBox.margin>
+                                        <Insets left="5.0" />
+                                    </HBox.margin>
+                                </Button>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+                <HBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="390.0" prefWidth="795.0" VBox.vgrow="ALWAYS">
+                    <children>
+                        <ListView fx:id="linksView" maxHeight="1.7976931348623157E308" maxWidth="1000.0" onMouseClicked="#getLinkClicked" prefHeight="390.0" prefWidth="390.0" style="-fx-background-color: #bababa;" HBox.hgrow="ALWAYS">
+                            <HBox.margin>
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                            </HBox.margin>
+                        </ListView>
+                        <ListView fx:id="wordsView" maxHeight="1.7976931348623157E308" maxWidth="1000.0" prefHeight="200.0" prefWidth="390.0" style="-fx-background-color: #bababa;" HBox.hgrow="ALWAYS">
+                            <HBox.margin>
+                                <Insets bottom="5.0" right="5.0" top="5.0" />
+                            </HBox.margin>
+                        </ListView>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</HBox>
