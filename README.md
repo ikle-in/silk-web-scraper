@@ -6,4 +6,5 @@ This project was completed in June of 2020 for the purpose of learning more abou
 
 The resulting application acts as a simple "web scraper" program - just enter a full webpage link and you can view the site's HTML, a list of all links found on the page, and more.
 
-executable JAR file can be downloaded here: [GOOGLE DRIVE LINK](https://drive.google.com/drive/folders/1w1pV0dCWbw1eBTL2mA7v0h0lLaJXXLnP?usp=sharing)
+Executable JAR file can be downloaded here: [GOOGLE DRIVE LINK](https://drive.google.com/drive/folders/1w1pV0dCWbw1eBTL2mA7v0h0lLaJXXLnP?usp=sharing)
+Note: Your computer may display a message stating that these types of files can harm your computer. I can assure you that my program is not a virus, but as a rule, only run executable .JAR files from sources that you trust.
